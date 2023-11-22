@@ -1,0 +1,20 @@
+<nav class="navigation-bar">
+    <div class="title">
+        <h1>
+            Employee Directory
+        </h1>
+        <div class="navbar-welcome">
+            <span>Welcome {{ ctrl.username }}!</span>
+            <button ng-click="ctrl.logout()" style="display: block;">Logout</button>
+        </div>
+    </div>
+    <div class="navigation-links">
+        <ul>
+            <li ng-repeat="item in ctrl.links">
+                <a href="/#!/home/{{item.link}}">
+                    {{ item.text }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

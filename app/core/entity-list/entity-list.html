@@ -1,0 +1,14 @@
+<div class="list-container">
+    <h1 class="list-title">
+        {{ ctrl.title }}
+    </h1>
+    <div style="display: flex; justify-content: space-between;">
+        <input style="flex-grow: 1 0 60%;" class="searchbox" ng-model="ctrl.searchValue" placeholder="{{ctrl.getPlaceholder()}}"/>
+        <button class="add-btn" ng-if="ctrl.canadd" ng-click="ctrl.onadd()">New</button>
+    </div>
+    <div class="entity-list">
+        <ul>
+            <li ng-repeat="item in ctrl.data | filter: ctrl.searchValue track by $index" ng-class="{'selected': $index == ctrl.selected}" ng-click="ctrl.onSelect({index: $index})">{{ item }}</li>
+        </ul>
+    </div>
+</div>

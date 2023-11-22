@@ -1,0 +1,32 @@
+<div class="login-screen">
+    <div ng-controller="LoginController">
+        <h1>
+            Employee Directory
+        </h1>
+        <div class="login-content">
+            <form ng-submit="submit()">
+                <div class="login-input">
+                    <label for="username">Login:</label>
+                    <input type="text" name="username" ng-model="credentials.username"/>
+                </div>
+                <div class="login-input">
+                    <label for="username">Password:</label>
+                    <input type="password" name="password" ng-model="credentials.password"/>
+                </div>
+                <div style="align-self: flex-start; margin-left: 104px">
+                    <input type="checkbox" name="rememberMe" class="checkbox" ng-model="credentials.rememberMe"/>
+                    <label for="rememberMe" style="width: auto;">Remember me</label>
+                </div>
+                <span style="color: red; font-size: 10px; text-align: center;">
+                    {{ error.message }}
+                </span>
+                <div style="align-self: flex-end;">
+                    <input type="submit" class="btn-submit" value="Log in >>"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="login-forgot-pwd">
+        <span>Forgotten your password?</span><a href="#">Request a new one.</a>
+    </div>
+</div>

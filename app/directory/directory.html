@@ -1,0 +1,49 @@
+<div ng-controller="DirectoryManagerCtrl as dm">
+    <div class="directory">
+        <div class="directory-item">
+            <list title="'Companies'" selected="ctrl.selected.catIdx" data="ctrl.companies" on-select="ctrl.selectCategory(index)"></list>
+            <button class="remove-btn" ng-click="ctrl.delete('category', 'modal-1')" ng-if="ctrl.selected.catIdx !== null">Remove</button>
+        </div>
+        <div class="directory-item">
+            <list title="'Departments'" ng-if="ctrl.selected.catIdx !== null" selected="ctrl.selected.depIdx" data="ctrl.departments" on-select="ctrl.selectDepartment(index)"></list>
+            <button class="remove-btn" ng-click="ctrl.delete('department', 'modal-1')" ng-if="ctrl.selected.depIdx !== null">Remove</button>
+        </div>
+        <div class="directory-item">
+            <list title="'Employees'" onadd="ctrl.add('modal-2')" canadd="true" ng-if="ctrl.selected.depIdx !== null" selected="ctrl.selected.empIdx" data="ctrl.employees" on-select="ctrl.selectEmployee(index)"></list>
+            <button class="remove-btn" ng-click="ctrl.delete('employee', 'modal-1')" ng-if="ctrl.selected.empIdx !== null">Remove</button>
+        </div>
+    </div>
+    <modal id="modal-1">
+        <div class="modal">
+            <div class="modal-body">
+                <div class="confirm-dialog">
+                    <strong>{{ ctrl.message }}</strong>
+                    <p>This action is irreversible</p>
+                    <div class="dialog-buttons">
+                        <button ng-click="ctrl.execute()">Confirm</button>
+                        <button ng-click="dm.closeModal('modal-1')">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-background"></div>
+    </modal>
+    <modal id="modal-2">
+        <div class="modal">
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h3 style="margin-top: 0px;">Add Employee</h3>
+                    <form ng-submit="ctrl.execute()">
+                        <label style="width: 100%; text-align: left;" for="newEmployee">Employee's name</label>
+                        <input id="employee-input" name="newEmployee" ng-model="ctrl.newEmployeeData.name" placeholder="Employee name"/>
+                        <div class="dialog-buttons">
+                            <button type="submit">Add</button>
+                            <button ng-click="dm.closeModal('modal-2')">Cancel</button>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-background"></div>
+    </modal>
+</div>

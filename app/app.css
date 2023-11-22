@@ -1,25 +1,400 @@
-/* app css stylesheet */
+.login-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 35%;
+  background-color: white;
+  border-radius: 0.15em;
+  box-shadow: 1px 12px 10px #ddd;
+}
 
-.menu {
+.login-screen h1 {
+  padding: 16px;
+  background: rgb(144,217,5);
+  background: linear-gradient(0deg, rgba(144,217,5,1) 0%, rgba(98,149,2,1) 100%);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  border-radius: 0.15em 0.15em 0em 0em;
+  font-size: 2em;
+  font-weight: 400;
+  text-align: center;
+}
+
+.login-content {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.login-content form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.login-input input {
+  box-shadow: inset 0px 2px 2px whitesmoke;
+  padding: 4px;
+  outline: none;
+  border: 1px solid #80808070;
+  border-radius: 0.3em;
+  margin: 4px 4px;
+}
+
+.checkbox {
+  border-radius: 0em;
+  border: 1px solid #80808070;
+  box-shadow: none;
+}
+
+.login-input:first {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+
+.login-input:last-child {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 4px;
+  margin-bottom: 0px;
+}
+
+label {
+  display: inline-block;
+  text-align: right;
+  width: 100px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.btn-submit {
+  outline: none !important;
+  border: 1px solid gainsboro !important;
+  padding: 4px 6px !important;
+  font-weight: 600;
+  margin: 8px 4px;
+  font-size: 12px;
+  border-radius: 0.25em;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 100%);
+}
+
+.login-forgot-pwd {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 8px;
+}
+
+.login-forgot-pwd span {
+  font-size: 12px;
+  color: black;
+}
+.login-forgot-pwd a {
+  margin-left: 2px;
+  color: black;
+  outline: none;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.navigation-bar {
+  width: 100%;
+  background: rgb(144,217,5);
+  background: linear-gradient(0deg, rgba(144,217,5,1) 0%, rgba(98,149,2,1) 100%);
+}
+
+.title {
+  height: 100px;
+  padding: 0px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title h1 {
+  margin-left: 48px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  width: 200px;
+}
+
+.navigation-links {
+  background-color: #6aa616;
+  height: 50px;
+  padding-left: 24px;
+  padding-right: 24px;
+  /* left: 50%; */
+}
+
+.navigation-links ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  list-style-type: none;
   list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
 }
 
-.menu:before {
-  content: "[";
+.navigation-links ul li {
+  border: 1px solid #2f4a0a;
+  border-radius: 0.1em;
+  display: inline-block;
+  margin-right: -5px;
+  background-color: #6eb012;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
 }
 
-.menu:after {
-  content: "]";
+.navbar-welcome {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.menu > li {
-  display: inline;
+.navbar-welcome button {
+  background-color: #5c940f;
+  border: 3px solid white;
+  color: white;
+  border-radius: 0.25em;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+.navigation-links a {
+  display: block;
+  color: white;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.navigation-links ul li:hover {
+  background-color: #5c940f;
+  cursor: pointer;
+}
+
+.directory {
+  margin: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.directory-item {
+  margin: 0px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.directory-item:first {
+  margin-left: 0px;
+}
+
+.directory-item:last-child {
+  margin-right: 0px
+}
+
+.list-container {
+  background-color: rgb(231, 230, 230);
+  border-radius: 0.5rem;
+  padding: 8px 16px;
+  width: 350px;
+  height: 600px;
+}
+
+.list-container:first{
+  margin-left: 0px;
+}
+
+.list-container:last-child {
+  margin-right: 0px;
+}
+
+.entity-list {
+  margin: 24px 0px;
+  background-color: white;
+  border-radius: 0.15rem;
+  border: 1px solid gray;
+  height: 80%;
+  overflow-y: auto;
+}
+
+.entity-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entity-list li {
+  padding: 4px 8px;
+  font-weight: 600;
+}
+
+.entity-list li:nth-child(odd) {
+  padding: 4px 8px;
+  background-color: white;
+}
+
+.entity-list li:nth-child(even) {
+  padding: 4px 8px;
+  background-color: rgb(228, 228, 228);
+}
+
+.entity-list li:active {
+  background-color: rgb(124, 189, 40);
+}
+
+.entity-list li:hover {
+  background-color: rgb(146, 211, 60);
+  cursor: pointer;
+  color: white;
+}
+
+.entity-list li.selected {
+  background-color: rgb(124, 189, 40) !important;
+  color: white;
+}
+
+.list-title {
+  color: rgb(39, 37, 37);
+  font-size: 24px;
+  text-align: left;
+  margin: 12px 0px;
+}
+
+.searchbox {
+  padding: 4px 8px;
+  border: 1px solid gray;
+  border-radius: 0.2rem;
+}
+
+modal {
+  /* modals are hidden by default */
+  display: none;
+}
+modal .modal {
+  /* modal container fixed across whole screen */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* z-index must be higher than .modal-background */
+  z-index: 1000;
+  
+  /* enables scrolling for tall modals */
+  overflow: auto;
+}
+
+modal .modal-body {
+  padding: 16px;
+  background: #fff;
+  width: 300px;
+  /* margin exposes part of the modal background */
+  margin: 40px auto;
+}
+
+.modal-background {
+  /* modal background fixed across whole screen */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* semi-transparent black  */
+  background-color: #000;
+  opacity: 0.75;
+  
+  /* z-index must be below .modal and above everything else  */
+  z-index: 900;
+}
+
+body.modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
+}
+
+.confirm-dialog {
+  padding: 8px;
+  /* width: 200px; */
+}
+
+.confirm-dialog p {
+  margin: 4px 0px;
+}
+
+.dialog-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.dialog-buttons button {
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 4px 8px;
+  color: black;
+  background-color: white;
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 0.25em;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px rgb(230, 230, 230);
+}
+
+.dialog-buttons button:first-child {
+  margin-right: 0px;
+}
+
+
+.dialog-buttons button:last-child {
+  margin-left: 0px;
+}
+
+.remove-btn {
+  border: 2px solid rgb(247, 32, 32);
+  border-radius: 0.25em;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(247, 32, 32);
+  background-color: white;
+  width: fit-content;
+  align-self: flex-end;
+  margin: 8px 0px 0px 0px;
+  cursor: pointer;
+}
+
+.directory-item .add-btn {
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 0.25em;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0px 2px 5px rgb(199, 199, 199);
+  cursor: pointer;
 }

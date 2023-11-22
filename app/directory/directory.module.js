@@ -1,0 +1,1 @@
+angular.module("app.directory", ["core.entity-list", "core.modal"])
